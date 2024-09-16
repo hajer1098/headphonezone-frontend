@@ -1,0 +1,15 @@
+<p>manageproducts works!</p>
+
+<div class="product-list">
+    <div class="card"  *ngFor="let product of products">
+        <div class="product-image">
+          <img [src]="product.processedImg" alt="product-image">
+        </div>
+        <div class="details">
+            <h2 class="product-name">{{product.name}}</h2>
+            <p>{{product.description}}</p>
+            <p>price : {{product.price}}</p>
+            <p>category : {{product.categoryName}}</p>
+        </div>
+    </div>
+</div>

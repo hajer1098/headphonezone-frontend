@@ -1,0 +1,32 @@
+h1 mb-4{
+    color: #D8D8D8;
+}
+
+.container{
+    background-color:  #E94823;;
+}
+section{
+    background-color:  #E94823;
+    width: 100%;
+    height: 100%;
+}
+@media (max-width: 767.98px) { /* Small devices (phones) */
+    .custom-width {
+      width: 100%;
+    }
+  }
+  @media (min-width: 768px) and (max-width: 991.98px) { /* Medium devices (tablets) */
+    .custom-width {
+      width: 50%;
+    }
+  }
+  @media (min-width: 992px) and (max-width: 1199.98px) { /* Large devices (desktops) */
+    .custom-width {
+      width: 33.33%;
+    }
+  }
+  @media (min-width: 1200px) { /* Extra large devices (large desktops) */
+    .custom-width {
+      width: 25%;
+    }
+  }

@@ -1,0 +1,92 @@
+
+  <!-- ---------------------------------------------------------------------------------- -->
+  <!-- Login 9 - Bootstrap Brain Component -->
+ <head>  <meta name="viewport" content="width=device-width, initial-scale=1"></head>
+ <body>
+<section class="py-3 py-md-5 py-xl-12" style="background-color: #E94823;">
+  <div class="container" style="background-color: #E94823;">
+    <div class="row gy-4 align-items-center">
+      <div class="col-12 col-sm-6 col-xl-4">
+        <div class="d-flex justify-content-center " style="background-color: #E94823;">
+          <div class="col-12 col-xl-6">
+          
+            <hr class=" mb-4" style="background-color: #E94823;">
+         
+            <p class="lead mb-5" style="color: #D8D8D8;">Welcome! Please enter your credentials to log in and access your account.</p>
+            <div class="text-endx">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-grip-horizontal" viewBox="0 0 16 16">
+                <path d="M2 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 col-sm-6 col-xl-4">
+        <div class="card border-0 rounded-2">
+          <div class="card-body p-2 p-sm-4 p-xl-4">
+            <div class="row">
+              <div class="col-12">
+                <div class="mb-4">
+                  <br>
+                  <h3>Sign in</h3>
+                  <br>
+                  <p style="color: #B2BEB5;">Don't have an account? <a routerLink="/register">Sign up</a></p>
+                 
+                </div>
+              </div>
+            </div>
+        
+            <form action="#!">
+              <div class="alert alert-danger" role="alert" *ngIf="errorMessages.length">
+                <p *ngFor="let msg of errorMessages" style="color: black; ">
+                  <span>{{ msg }}</span>
+                </p>
+              </div>
+              <div class="row gy-3 overflow-hidden">
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input [(ngModel)]="authReq.email"  type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                    <label for="email" class="form-label">Email</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-floating mb-3">
+                    <input  [(ngModel)]="authReq.password" type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
+                    <label for="password" class="form-label">Password</label>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" name="remember_me" id="remember_me">
+                    <label class="form-check-label text-secondary" for="remember_me">
+                      Keep me logged in
+                    </label>
+                  </div>
+                </div>
+                <br><br>
+                <div class="col-12">
+                  <div class="d-grid">
+                    <button (click)="login()" class="btn btn-lg" type="submit" style="background-color: black; color: #FFFF;" >Log in now</button>
+                  </div>
+                </div>
+              </div>
+              <br>
+            </form>
+            <br><br> 
+            <div class="row">
+              <div class="col-12">
+                <div class="d-flex gap-2 gap-md-4 flex-column flex-md-row justify-content-md-end mt-4">
+                  <a href="#!">Forgot password</a>
+                </div>
+              </div>
+            </div>
+          
+           
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</body>

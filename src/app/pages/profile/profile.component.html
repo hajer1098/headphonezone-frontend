@@ -1,0 +1,157 @@
+<!-- 
+<div class="col-xl-6">
+  
+  
+
+    <div class="card mb-3">
+    
+        <div class="card-body">
+           <h5>My-profile</h5>
+            <form>
+                <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="First name">
+                    </div>
+                    <div class="col">
+                      <input type="text" class="form-control" placeholder="Last name">
+                    </div>
+                  </div>
+                
+              
+               
+                <div class="mb-3">
+                    <label for="exampleFormControlTextarea1" class="form-label">About me</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                
+                <button class="btn" style="background-color: black; color:#fff;" type="button">Save changes</button>
+            </form>
+        </div>
+        
+    </div>
+</div>
+
+ -->
+ <!-- <div class="p-3">
+  <h2>My profile</h2>
+  <div class="alert alert-success" role="alert" *ngIf="successMsg">
+    <p>{{successMsg}}</p>
+  </div>
+<br><br>
+  <div class="d-flex flex-row justify-content-between">
+    <div class="card p-3 col-6 me-1">
+      <h3>Personal info</h3>
+      <div class="mb-3">
+        <label for="firstname" class="form-label">Firstname</label>
+        <input [(ngModel)]="userDto.firstname" type="text" class="form-control" id="firstname" placeholder="Firstname">
+      </div>
+      <div class="mb-3">
+        <label for="lastname" class="form-label">Lastname</label>
+        <input [(ngModel)]="userDto.lastname" type="text" class="form-control" id="lastname" placeholder="Lastname">
+      </div>
+      
+      <div class="mb-3">
+        <label for="iban" class="form-label">Password</label>
+        <input [(ngModel)]="userDto.password" type="password" class="form-control" id="password" placeholder="mail@email.com" >
+      </div>
+      <div class="mb-3">
+        <label for="iban" class="form-label">Email</label>
+        <input [(ngModel)]="userDto.email" type="email" class="form-control" id="email" placeholder="mail@email.com" disabled>
+      </div>
+    </div>
+   
+  </div>
+  <div class="d-flex justify-content-end mt-3">
+    <button type="button" class="btn btn-link">
+      <em class="fas fa-times"></em>&nbsp;Cancel
+    </button>
+    <button (click)="save()" type="button" class="btn btn-danger">
+      <em class="fas fa-save"></em>&nbsp;Save
+    </button>
+  </div>
+</div> -->
+
+<div class="p-3">
+
+  <div class="alert alert-success" role="alert" *ngIf="successMsg">
+    <p>{{successMsg}}</p>
+  </div>
+<div class="container">
+  <div class="row">
+      <div class="col-12">
+        <!-- Page title -->
+        <div class="my-5">
+          <h3>My Profile</h3>
+          <hr>
+        </div>
+        <!-- Form START -->
+        <form class="file-upload">
+          <div class="row mb-5 gx-5">
+            <!-- Contact detail -->
+            <div class="col-xxl-8 mb-5 mb-xxl-0">
+              <div class="bg-secondary-soft px-4 py-5 rounded">
+                <div class="alert alert-danger" role="alert" *ngIf="errorMessages.length">
+                  <p *ngFor="let msg of errorMessages" style="color: black; ">
+                    <span>{{ msg }}</span>
+                  </p>
+                </div>
+                <div class="row g-3">
+                  <h4 class="mb-4 mt-0">Personal infos </h4>
+                  <!-- First Name -->
+                  <div class="col-md-6">
+                    <label class="form-label">First Name *</label>
+                    <input type="text" [(ngModel)]="userDto.firstname" name="firstname" id="firstname" class="form-control" placeholder="" aria-label="First name" value="Scaralet">
+                  </div>
+                  <!-- Last name -->
+                  <div class="col-md-6">
+                    <label class="form-label">Last Name *</label>
+                    <input type="text" [(ngModel)]="userDto.lastname" name="lastname"  id="lastname"  class="form-control" placeholder="" aria-label="Last name" value="Doe">
+                  </div>
+                  <!-- Phone number -->
+              
+                  <!-- Mobile number -->
+                  <div class="col-md-6">
+                    <label class="form-label">Email</label>
+                    <input type="text" [(ngModel)]="userDto.email" name="email" id="email" class="form-control" placeholder="name@example.com" aria-label="" value="">
+                  </div>
+                  <div  class="col-md-6">
+                    <label class="form-label">Password</label>
+                    <input class="form-control" [(ngModel)]="userDto.password" name="password"  id="exampleFormControlTextarea1" rows="3">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Address</label>
+                    <textarea class="form-control" [(ngModel)]="userDto.adresse" name="adresse"  id="exampleFormControlTextarea1" rows="3"></textarea>
+                  </div>
+                
+                  <div class="d-flex justify-content-end mt-3">
+                    <button type="button" class="btn btn-link">
+                      <em class="fas fa-times"></em>&nbsp;Cancel
+                    </button>
+                    <button (click)="edit(userDto.id)" type="button" class="btn btn-danger">
+                      <em class="fas fa-save"></em>&nbsp;Save
+                    </button>
+                  </div>
+                
+                </div> <!-- Row END -->
+              </div>
+            </div>
+            <!-- Upload profile -->
+         
+          </div> <!-- Row END -->
+  
+          <!-- Social media detail -->
+     
+      
+        </form> <!-- Form END -->
+      </div>
+    </div>
+    </div>
+

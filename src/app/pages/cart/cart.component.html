@@ -1,0 +1,67 @@
+
+<!-- <app-notfound [visible]="!cart || cart.items.length <=0 "
+notFoundMessage="Items not found !"
+
+resetLinkText="Go to Home Page"></app-notfound> -->
+<!-- ></app-notfound> -->
+
+
+<div *ngIf="cartItems.length >0">
+    <ul>
+        <li *ngFor="let cartItem of cartItems">
+            <div>
+                <img src="cartItem.processedImg" [alt]="cartItem.name">
+            </div>
+            <div class="product_info">
+
+            </div>
+            <div>
+                <a routerLink="/food/{{cartItem.id}}">
+                    {{cartItem.name}}
+                </a>
+            </div>
+       
+            <div>
+            <div class="price">
+                <p> {{cartItem.price | currency}} </p>
+            
+            </div>
+            <div class="quantity">
+                <button [disabled]="cartItem.quantity==1">icon -</button>
+                <p> {{cartItem.quantity}} </p>
+                <button >icon+</button>
+            
+            </div>
+
+            <div class="totalprice">
+            
+                <p> {{cartItem.totalprice| currency}} </p>
+                <button >icon+</button>
+            
+            </div>
+
+
+            </div>
+        
+
+        </li>
+    </ul>
+
+</div>
+<div *ngIf="cartItems.length ==0">
+    <div >
+        <img src="/assets/404.jpg">
+        <p>no data found</p>
+        <a routerLink="/">retour</a>
+    
+    
+    </div>
+</div>
+
+
+
+
+
+
+
+

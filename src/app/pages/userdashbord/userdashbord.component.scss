@@ -1,0 +1,22 @@
+
+.home-content {
+   // position: absolute;
+    height: 100%;
+    left: 78px;
+    width: calc(100% - 78px);
+    transition: all 0.5s ease;
+
+  }
+  
+  .home-content .text {
+    font-size: 25px;
+    font-weight: 300;
+    color: #1d1b31;
+    margin: 12px;
+  }
+  
+  .sidebar.active ~ .home-content {
+    width: calc(100% - 240px);
+    left: 240px;
+  }
+  

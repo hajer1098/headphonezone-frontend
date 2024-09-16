@@ -1,0 +1,15 @@
+<p>Add new product category!</p>
+<form>
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Name</label>
+      <input type="text" [(ngModel)]="categoryDto.name"  class="form-control" id="exampleFormControlInput1" placeholder="name">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1"> Description </label>
+      <textarea class="form-control" [(ngModel)]="categoryDto.description"  id="exampleFormControlTextarea1" rows="3"></textarea>
+    </div>
+    <div>
+        <button type="button" class="btn btn-light" (click)="save()" >save</button>
+        <button type="button" class="btn btn-outline-warning"> cancel </button>
+    </div>
+  </form>

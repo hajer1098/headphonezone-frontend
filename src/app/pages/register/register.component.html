@@ -1,0 +1,92 @@
+<!-- Login 9 - Bootstrap Brain Component -->
+<section class="py-3 py-md-5 py-xl-8" style="background-color: #E94823;">
+    <div class="container">
+      <div class="row gy-4 align-items-center">
+        <div class="col-12 col-md-6 col-xl-7">
+          <div class="d-flex justify-content-center " style="background-color: #E94823;">
+            <div class="col-12 col-xl-6">
+            
+              <hr class=" mb-4" style="background-color: #E94823;">
+           
+              <p class="lead mb-2" style="color: #D8D8D8;">Create an account by filling in your details below to get started.</p>
+              <div class="text-endx">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="currentColor" class="bi bi-grip-horizontal" viewBox="0 0 16 16">
+                  <path d="M2 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-xl-5">
+          <div class="card border-0 rounded-4">
+            <div class="card-body p-3 p-md-4 p-xl-4">
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-4">
+                    <h3>Sign up</h3>
+                  
+                  </div>
+                </div>
+              </div>
+              <form action="#!">
+                <div class="row gy-3 overflow-hidden">
+                  <div class="alert alert-danger" role="alert" *ngIf="errorMessages.length">
+                    <p *ngFor="let msg of errorMessages" style="color: black; ">
+                      <span>{{ msg }}</span>
+                    </p>
+                  </div>
+                    <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input [(ngModel)]="userDto.firstname" type="text" class="form-control" name="text" id="text" placeholder="lastname" required>
+                          <label  for="email" class="form-label">First name</label>
+                        </div>
+                      </div>
+                      <div class="col-12">
+                        <div class="form-floating mb-3">
+                          <input [(ngModel)]="userDto.lastname" type="text" class="form-control" name="lastname" id="lastname" placeholder="last name" required>
+                          <label for="email" class="form-label">Last name</label>
+                        </div>
+                      </div>
+                  <div class="col-12">
+                    <div class="form-floating mb-3">
+                      <input  [(ngModel)]="userDto.email"  type="email" class="form-control" name="email" id="email" placeholder="name@example.com" required>
+                      <label for="email" class="form-label">Email</label>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-floating mb-3">
+                      <input   [(ngModel)]="userDto.password" type="password" class="form-control" name="password" id="password" value="" placeholder="Password" required>
+                      <label for="password" class="form-label">Password</label>
+                    </div>
+                  </div>
+                  <!-- <div class="col-12">
+                    <div class="form-floating mb-3">
+                      <input type="password" class="form-control" name="repeatpassword" id="password" value="" placeholder="repeat password" required>
+                      <label for="password" class="form-label">Confirm password</label>
+                    </div>
+                  </div> -->
+            
+                  <div class="col-12">
+                    <div class="d-grid">
+                        <button  (click)="register()" class="btn btn-lg" type="submit" style="background-color: black; color: #FFFF;" >Register now</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <div class="row">
+                <div class="col-12">
+                  <div class="mb-4">
+                    <br>
+                    <p style="color: #B2BEB5;">Already have an account  <a  routerLink="" >Sign In</a></p>
+                  </div>
+                </div>
+              </div>
+            
+             
+             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

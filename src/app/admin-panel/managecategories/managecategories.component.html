@@ -1,0 +1,27 @@
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Description</th>
+       
+      </tr>
+    </thead>
+    <tbody>
+        <tr  *ngFor="let category  of categories">
+						
+            <td>{{category.name}} </td>
+            <td>{{category.description}}</td>
+            
+            <td>
+           
+							
+                <a [routerLink]="['/admin/edituser', category.id]"data-toggle="modal"><i class="bx bx-pencil bx-sm" style="color: #FFC300 ;"></i></a>
+                <a (click)="categoryIdToDelete = category.id" class="delete" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bx bx-trash bx-sm" style="color:#E94823 ;"></i></a>
+            
+          </td>
+
+            
+      <tr>
+    
+    </tbody>
+  </table>

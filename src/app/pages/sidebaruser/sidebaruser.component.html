@@ -1,0 +1,101 @@
+<!-- <div class="sidebar">
+    <div class="admin-profile">
+      <img src="path/to/admin-photo.jpg" alt="Admin Photo">
+      <h3>Admin Name</h3>
+      <p>Admin Role</p>
+      <hr width="350px" color="white">
+    </div>
+    <ul class="menu-items">
+      <li><a href="#">Dashboard</a></li>
+      <li><a routerLink="customers" routerLinkActive="active">curtomers</a></li>
+      <li><a routerLink="users" routerLinkActive="active">users</a></li>
+
+    </ul>
+  </div> -->
+ 
+
+
+  <!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Sidebar Menu</title>
+ 
+    <!-- box icons -->
+    <link
+      href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <!-- <script language="javascript">
+    let btn = document.querySelector("#btn");
+let sidebar = document.querySelector(".sidebar");
+let searchBtn = document.querySelector(".bx-search");
+
+btn.onclick = function () {
+  sidebar.classList.toggle("active");
+};
+
+searchBtn.onclick = function () {
+  sidebar.classList.toggle("active");
+};
+
+    </script> -->
+
+  <body>
+    <div class="sidebar"  #sidebarRef>
+      <div class="logo-content">
+        <div class="logo">
+          <i class="bx bx-code-alt"></i>
+          <div class="logo-name">DataDoor</div>
+        </div>
+        <button (click)="toggleSidebar(sidebarRef)">  <i class="bx bx-menu" id="btn" > </i> </button>
+      </div>
+      <ul class="nav-list">
+    
+        <li>
+          <a routerLink="/user/">
+            <i class= "bx bx-home-alt bx-sm"></i>
+            <span class="links-name">Dashboard</span>
+          </a>
+          <span class="tooltip">Dashbord</span>
+        </li>
+        <li>
+          <a routerLink="profile" >
+            <i class="bx bxs-user-detail bx-sm"></i>
+            <span class="links-name">Edit profile</span>
+          </a>
+          <span class="tooltip">Edit profile</span>
+        </li>
+        <li>
+          <a routerLink="changepassword">
+            <i class="bx bxs-key bx-sm"></i>
+            <span class="links-name">Change password</span>
+          </a>
+          <span class="tooltip">Change password</span>
+        </li>
+      </ul>
+
+      <!-- <div class="profile-content">
+        <div class="profile">
+          <div class="profile-details">
+            <img src="./img/about.jpg" />
+            <div class="name-job">
+              <div class="name">Edy Nogueira</div>
+              <div class="job">Junior Developer</div>
+            </div>
+          </div>
+          <i class="bx bx-log-out" id="logout"></i>
+        </div>
+      </div> -->
+    </div>
+
+    <div class="home-content">
+        <router-outlet></router-outlet>
+    </div>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>

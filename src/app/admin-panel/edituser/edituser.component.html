@@ -1,0 +1,69 @@
+
+
+
+  
+    <div class="container">
+      <div class="row">
+          <div class="col-12">
+            <!-- Page title -->
+            <div class="my-5">
+              <h3>Edit user account</h3>
+              <hr>
+            </div>
+            <!-- Form START -->
+            <form class="file-upload">
+              <div class="row mb-5 gx-5">
+                <!-- Contact detail -->
+                <div class="col-xxl-8 mb-5 mb-xxl-0">
+                  <div class="bg-secondary-soft px-4 py-5 rounded">
+                    <div class="row g-3">
+                      <h4 class="mb-4 mt-0">User details </h4>
+                      <!-- First Name -->
+                      <div class="col-md-6">
+                        <label class="form-label">First Name *</label>
+                        <input type="text" [(ngModel)]="userDto.firstname" name="firstname" id="firstname" class="form-control" placeholder="" aria-label="First name" value="Scaralet">
+                      </div>
+                      <!-- Last name -->
+                      <div class="col-md-6">
+                        <label class="form-label">Last Name *</label>
+                        <input type="text" [(ngModel)]="userDto.lastname" name="lastname"  id="lastname"  class="form-control" placeholder="" aria-label="Last name" value="Doe">
+                      </div>
+                      <!-- Phone number -->
+                      <div class="col-md-6">
+                        <label class="form-label">Password</label>
+                        <input type="password"[(ngModel)]="userDto.password" name="password" id="password" class="form-control" placeholder="" aria-label="Phone number">
+                      </div>
+                      <!-- Mobile number -->
+                      <div class="col-md-6">
+                        <label class="form-label">Email</label>
+                        <input type="text" [(ngModel)]="userDto.email" name="email" id="email" class="form-control" placeholder="name@example.com" aria-label="" value="" disabled>
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Address</label>
+                        <textarea class="form-control" [(ngModel)]="userDto.adresse" name="adresse"  id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                      <div class="d-flex justify-content-end mt-3">
+                        <button type="button" class="btn btn-link">
+                          <em class="fas fa-times"></em>&nbsp;Cancel
+                        </button>
+                        <button (click)="EditUser(userDto.id)" type="button" class="btn btn-danger">
+                          <em class="fas fa-save"></em>&nbsp;Save
+                        </button>
+                      </div>
+                    
+                    </div> <!-- Row END -->
+                  </div>
+                </div>
+                <!-- Upload profile -->
+             
+              </div> <!-- Row END -->
+      
+              <!-- Social media detail -->
+         
+          
+            </form> <!-- Form END -->
+          </div>
+        </div>
+        </div>
+    
+    

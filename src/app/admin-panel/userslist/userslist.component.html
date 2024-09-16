@@ -1,0 +1,91 @@
+<div class="p-3">
+    <h2>Manage Users </h2>
+    <div class="d-flex justify-content-end mb-3">
+      <div class="form-check form-switch">
+        <div class="col-xs-6">
+          <button type="button" class="btn btn-primary" (click)="exportasCsv()" style="margin: 10px;"><i class="bx bx-download" style="padding: 2px;">Export as csv </i></button>
+          
+          <a  routerLink="/admin/adduser" class="btn btn-success"><i class="bx bx-plus-medical"><span> New user</span> </i> </a>
+
+      
+      </div>
+
+      </div>
+    </div>
+    <div>
+      <table class="table table-bordered">
+        <thead>
+        <tr>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Email</th>
+          <th scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.firstname}}</td>
+          <td>{{user.lastname}}</td>
+          <td>{{user.email}}</td>
+          
+        
+          <td>
+           
+							
+            <a [routerLink]="['/admin/edituser', user.id]"data-toggle="modal"><i class="bx bx-pencil bx-sm" style="color: #FFC300 ;"></i></a>
+            <a (click)="userIdToDelete = user.id" class="delete" data-bs-toggle="modal" data-bs-target="#staticBackdrop"><i class="bx bx-trash bx-sm" style="color:#E94823 ;"></i></a>
+        
+      </td>
+      
+        </tr>
+        <tr *ngIf="!users || users.length === 0">
+          <td colspan="4">{{msg}}</td>
+        </tr>
+        <tr *ngIf="!pagedUsers || pagedUsers.length === 0">
+          <td colspan="4">{{msg}}</td>
+        </tr>
+        </tbody>
+      </table>
+      <nav aria-label="Page navigation">
+        <ul class="pagination">
+          <li class="page-item" [class.disabled]="currentPage === 1">
+            <a class="page-link" (click)="goToPage(currentPage - 1)" aria-label="Previous">
+              <span aria-hidden="true">&laquo;</span>
+            </a>
+          </li>
+          <li *ngFor="let page of pages" class="page-item" [class.active]="currentPage === page">
+            <a class="page-link" (click)="goToPage(page)">{{ page }}</a>
+          </li>
+          <li class="page-item" [class.disabled]="currentPage === totalPages">
+            <a class="page-link" (click)="goToPage(currentPage + 1)" aria-label="Next">
+              <span aria-hidden="true">&raquo;</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  
+ 
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Confirm!</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Would you really want to delete this data?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-link" (click)="userIdToDelete = -1" data-bs-dismiss="modal">
+          <em class="fas fa-times"></em>&nbsp;Cancel
+        </button>
+        <button (click)="delete()" type="button" class="btn btn-danger" data-bs-dismiss="modal">
+          <em class="fas fa-trash"></em>&nbsp;Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
